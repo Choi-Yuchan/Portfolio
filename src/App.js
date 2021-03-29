@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import styled from 'styled-components';
+import About from './components/main/About';
+import Contact from './components/main/Contact';
+import Intro from './components/main/Intro';
+import MyWork from './components/mywork/MyWork';
+import SkipMenu from './components/SkipMenu';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <SkipMenu/>
+      <Intro/>
+      <About/>
+      <MyWork/>
+      <MyWork/>
+      <MyWork/>
+      <MyWork/>
+      <MyWork/>
+      <Contact/>
+    </Wrapper>
   );
 }
 
+const Wrapper = styled.div`
+  margin:0 auto;
+  padding-left: 5%;
+  background-color:black;
+  color: white;
+`;
 export default App;
