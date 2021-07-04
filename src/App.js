@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import About from './components/main/About';
 import Contact from './components/main/Contact';
 import Intro from './components/main/Intro';
-import MyWork from './components/mywork/MyWork';
+import MyWork from './components/main/MyWork';
 import SkipMenu from './components/SkipMenu';
 
 function App() {
@@ -12,10 +12,6 @@ function App() {
       <SkipMenu/>
       <Intro/>
       <About/>
-      <MyWork/>
-      <MyWork/>
-      <MyWork/>
-      <MyWork/>
       <MyWork/>
       <Contact/>
     </Wrapper>

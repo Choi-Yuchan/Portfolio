@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import ColorBl from '../colorBl/ColorBl';
 
-const ColorArea = () => {
+const ColorArea = ({colors}) => {
     return(
         <Colors>
             <ConText>Colors</ConText>
             <ColorBox>
-                <ColorBl color="#eee"></ColorBl>
-                <ColorBl color="#3f51b5"></ColorBl>
-                <ColorBl color="#303f9f"></ColorBl>
-                <ColorBl color="#fff"></ColorBl>
+                <ColorBl color={colors[0]}></ColorBl>
+                <ColorBl color={colors[1]}></ColorBl>
+                <ColorBl color={colors[2]}></ColorBl>
+                <ColorBl color={colors[3]}></ColorBl>
             </ColorBox>
         </Colors>
     );

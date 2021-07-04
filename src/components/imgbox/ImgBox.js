@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-const ImgBox = () => {
+const ImgBox = ({src, href}) => {
     return(
         <ImgDiv>
-            <Image src={process.env.PUBLIC_URL + './images/indigo-mockup.jpg'} alt='Portfolio'></Image>
+            <Image src={src} alt='Portfolio'></Image>
             <ButtonBox>
-                <Button as='a' href='https://choi-yuchan.github.io/Indigo/'>WEBSITE</Button>
+                <Button as='a' href={href}>WEBSITE</Button>
             </ButtonBox>
         </ImgDiv>
     );
@@ -29,6 +29,9 @@ const ButtonBox = styled.div`
     bottom: 40%;
     left: 50%;
     transform: translateX(-50%);
+    @media(min-width: 780px){
+        bottom: 10%;
+    }
 `;
 
 const Button = styled.button`
