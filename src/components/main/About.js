@@ -10,28 +10,27 @@ const About = () => {
             <Contents>
                 <MyIntro>
                     <MainText> 
-                        저는 다양한 경험을 바탕으로 유저의 니즈를 파악하고 이해하는데 능하며,
-                        도전을 두려워하지 않고 배우고자 하는 의지가 강하여 항상 성장해 나가는 
-                        웹 퍼블리셔입니다.
+                         저는 다양한 경험을 바탕으로 유저의 니즈를 파악하고 이해하여 이를 UI/UX로 구현하고자 합니다. 
+                        그리고 도전을 두려워하지 않고 배우려고 늘 노력하고, 항상 성장하는 프론트엔드 개발자입니다.
                     </MainText>
+                    <Edu>
+                        <EduContent>
+                            <SubTitle>Education</SubTitle>
+                            <SubText>국제 컴퓨터 아카데미<br/>스마트기기 UI/UX 웹퍼블리셔 과정</SubText>
+                            <SubText>Greystone College<br/>Customer service course</SubText>
+                            <SubText>세종대학교<br/>외식경영학과 전공</SubText>
+                        </EduContent>
+                        <Certificate>
+                            <SubTitle>Certificates</SubTitle>
+                            <SubText>ICDL advanced certificates</SubText>
+                            <SubText>상공회의소 IT Plus Level 2</SubText>
+                            <SubText>반려동물관리사</SubText>
+                            <SubText>워드프로세서 2급</SubText>
+                            <SubText>컴퓨터활용능력 2급</SubText>
+                            <SubText>바둑 아마 初단</SubText>
+                        </Certificate>
+                    </Edu>
                 </MyIntro>
-                <Edu>
-                    <EduContent>
-                        <SubTitle>Education</SubTitle>
-                        <SubText>국제 컴퓨터 아카데미<br/>스마트기기 UI/UX 웹퍼블리셔 과정</SubText>
-                        <SubText>Greystone College<br/>Customer service course</SubText>
-                        <SubText>세종대학교<br/>외식경영학과 전공</SubText>
-                    </EduContent>
-                    <Certificate>
-                        <SubTitle>Certificates</SubTitle>
-                        <SubText>ICDL advanced certificates</SubText>
-                        <SubText>상공회의소 IT Plus Level 2</SubText>
-                        <SubText>반려동물관리사</SubText>
-                        <SubText>워드프로세서 2급</SubText>
-                        <SubText>컴퓨터활용능력 2급</SubText>
-                        <SubText>바둑 아마 初단</SubText>
-                    </Certificate>
-                </Edu>
                 <MySkill>
                     <MyTitle>My Skills</MyTitle>
                     <SkillBar>
@@ -91,8 +90,7 @@ const About = () => {
 }
 
 const Section = styled.section`
-    height: 100vmin;
-    margin-bottom: 5%;
+    margin-bottom: 15%;
 `;
 
 const TitleBox = styled.div`
@@ -114,25 +112,23 @@ const UnderLine = styled.div`
 
 const Contents = styled.div`
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     height:100%;
 `;
 
 const MyIntro = styled.article`
-    width: 26.25%;
-    padding-bottom: 8%;
+    width: 35%;
 `;
 
 const MainText = styled.p`
     font-size: 1.125rem;
     color: #fefefe;
-    padding-top: 8%;
+    padding: 8% 0;
     line-height: 2;
 `;
 
 const Edu = styled.article`
     display: flex;
-    height: 40vh;
 `;
 
 const EduContent = styled.div`
@@ -156,11 +152,12 @@ const SubText = styled.p`
 `;
 
 const MySkill = styled.article`
-    width: 30%;
+    width: 40%;
     margin-right: 10%;
     padding-top: 2%;
 `;
 const MyTitle = styled(SubTitle)`
+    padding-left: 2rem;
     margin-bottom: 1.2rem;
 `;
 const SkillBar = styled.div`
