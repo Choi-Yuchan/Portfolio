@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const Intro = () => {
     return(
@@ -47,6 +47,20 @@ const MoveBtn = styled.div`
     index: 2;
 `;
 
+const moveDown = keyframes`
+    0%{
+        transform: rotate(-45deg) translate(0, 0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(-45deg) translate(-20px, 20px);
+        opacity: 0;
+    }
+`;
+
 const Arrow = styled.span`
     position: absolute;
     top: 0;
@@ -57,6 +71,7 @@ const Arrow = styled.span`
     border-left: 2px solid #fff;
     border-bottom: 2px solid #fff;
     transform: rotate(-45deg);
+    animation: ${moveDown} 1.5s infinite;
     box-sizing: border-box;
 `;
 export default Intro;

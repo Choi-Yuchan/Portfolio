@@ -7,16 +7,25 @@ const Contact = () => {
     const [subject, setSubject] = useState("")
     const [message, setMessage] = useState("")
 
-    const handleChange = (e) => {
+    const handleChangeName = (e) => {
         if(e.target.placeholder === "Name"){
             setName(e.target.value);
         }
+    }
+
+    const handleChangeEmail = (e) => {
         if(e.target.placeholder === "E-mail"){
             setEmail(e.target.value);
         }
+    }
+
+    const handleChangeSubject = (e) => {
         if(e.target.placeholder === "Subject"){
             setSubject(e.target.value);
         }
+    }
+
+    const handleChangeMessage = (e) => {
         if(e.target.placeholder === "Message"){
             setMessage(e.target.value);
         }
@@ -24,22 +33,25 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(name === ""){
-            alert("You forget to write your name");
+        const checkBlanks = () => {
+            if(name === "" || email === "" || subject === "" || message === ""){
+                alert("Please fill in all blanks");
+            }
         }
-        if(email === ""){
-            alert("You forget to write your e-mail");
-        }
-        if(subject === ""){
-            alert("You forget to write your subject");
-        }
-        if(message === ""){
-            alert("You forget to write your message");
-        }
+        
         if(name && email && subject && message){
             alert(`Thank you ${name} for sending me a message. I will reply you soon`)
+            setName("")
+            setEmail("")
+            setSubject("")
+            setMessage("")
         }
+        checkBlanks();
     }
+
+
+    
+    
 
     return(
         <Section>
@@ -70,10 +82,10 @@ const Contact = () => {
             <Message>
                 <MyForm onSubmit={handleSubmit}>
                     <Sentence>Let's get in touch. Send me a message</Sentence>
-                    <Input placeholder="Name" value={name} onChange={handleChange}/>
-                    <Input placeholder="E-mail" value={email} onChange={handleChange}/>
-                    <Input placeholder="Subject" value={subject} onChange={handleChange}/>
-                    <Input placeholder="Message" value={message} onChange={handleChange}/>
+                    <Input placeholder="Name" value={name} onChange={handleChangeName}/>
+                    <Input placeholder="E-mail" value={email} onChange={handleChangeEmail}/>
+                    <Input placeholder="Subject" value={subject} onChange={handleChangeSubject}/>
+                    <Input placeholder="Message" value={message} onChange={handleChangeMessage}/>
                     <SendBtn type="submit">Send</SendBtn>
                 </MyForm>
             </Message>
@@ -146,5 +158,11 @@ const SendBtn = styled.button`
     font-size: 1.125rem;
     border: #929292 outset 3px;
     transition: 0.5s
+
+    :focus, :hover{
+        box-shadow: inset 7em 0 0 0 #111;
+        color: #f1f1f1;
+        border-style: inset;
+    }
 `;
 export default Contact;

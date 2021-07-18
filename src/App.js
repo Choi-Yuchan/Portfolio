@@ -23,5 +23,8 @@ const Wrapper = styled.div`
   padding-left: 5%;
   background-color:black;
   color: white;
+  ::-webkit-scrollbar{
+    display: none;
+  }
 `;
 export default App;
